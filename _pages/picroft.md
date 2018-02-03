@@ -306,3 +306,16 @@ Using a program like _vi_ or _nano_, add a line to the end of the file as follow
 ```
 
 Make sure to set the device number to the correct device.
+
+##### Change audio input and output with pactl
+
+If your test_microphone works but Mycroft/Picroft does not get any noise then 
+try to find your devices 
+for output `pactl list sink`
+for input `pactl list sources`
+
+Get there name and set 
+the output pactl `set-default-sink “name” `
+the input `set-default-source “name” `
+
+after `sudo reboot` it should work fine
